@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* ========== Royal Cream Design Tokens ========== */
+@theme {
+  --color-cream-50: #FFFEF7;
+  --color-cream-100: #FFFCEB;
+  --color-cream-200: #FFF8D6;
+  --color-cream-300: #FFF3C0;
+  --color-cream-400: #FFEDAA;
+  --color-cream-500: #FFE494;
+  --color-cream-600: #F5D67A;
+
+  --color-royal-300: #D4A574;
+  --color-royal-400: #C4956A;
+  --color-royal-500: #B8860B;
+  --color-royal-600: #A0750A;
+  --color-royal-700: #8B6914;
+
+  --color-brown-50: #FAF6F1;
+  --color-brown-100: #F0E6D8;
+  --color-brown-200: #DCC9AD;
+  --color-brown-300: #C4A882;
+  --color-brown-400: #A68B5B;
+  --color-brown-500: #7A6244;
+  --color-brown-600: #5C4A33;
+  --color-brown-700: #4A3728;
+  --color-brown-800: #3A2B1E;
+  --color-brown-900: #2A1F15;
+
+  --color-income: #2E7D32;
+  --color-income-light: #E8F5E9;
+  --color-expense: #C62828;
+  --color-expense-light: #FFEBEE;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ========== Global Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream-100);
+  color: var(--color-brown-700);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ========== Animations ========== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* ========== Modal Overlay ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 31, 21, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-brown-200); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-brown-300); }
